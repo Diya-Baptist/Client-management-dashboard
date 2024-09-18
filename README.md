@@ -14,27 +14,25 @@ This repository contains the project developed for a **Software Engineer Interns
 
 - **Home Page**: The landing page of the software, where users can navigate to different functionalities.
   
-  ![Home Page](./screenshots/home_page.png)
+
 
 - **New Job Sheet**: A page where users can create new job sheets.
   
-  ![New Job Sheet](./screenshots/new_job_sheet.png)
 
 - **View Page**: Users can view job sheets with an option to print and view attachments.
   
-  ![View Page](./screenshots/view_page.png)
+ 
 
 - **Edit Page**: Users can edit the details of an existing job sheet.
   
-  ![Edit Page](./screenshots/edit_page.png)
+
 
 ## Tech Stack
 
-The technology stack is flexible, and you are free to use any framework or programming language that suits the project. Examples include:
+The technology stack include:
 
-- Frontend: HTML, CSS, JavaScript, React, or Angular
-- Backend: Node.js, Python (Flask or Django), Java, or Ruby on Rails
-- Database: MySQL, PostgreSQL, MongoDB, or SQLite
+- Frontend: HTML, CSS, JavaScript
+
 
 ## Getting Started
 
