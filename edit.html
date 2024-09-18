@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Job Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Edit Job Sheet</h1>
+    </header>
+
+    <section>
+        <form class="edit-form">
+            <label for="client-name">Client Name:</label>
+            <input type="text" id="client-name" value="nandini goswami">
+            
+            <label for="contact-info">Contact Info:</label>
+            <input type="text" id="contact-info" value="1234567890">
+
+            <label for="received-date">Received Date:</label>
+            <input type="date" id="received-date" value="2024-09-05">
+
+            <label for="inventory-received">Inventory Received:</label>
+            <input type="text" id="inventory-received" value="mouse">
+
+            <label for="inventory-doc">Inventory Image/Document/Video:</label>
+            <input type="text" id="inventory-doc" value="None">
+
+            <label for="reported-issues">Reported Issues:</label>
+            <textarea id="reported-issues">hgh</textarea>
+
+            <label for="client-notes">Client Notes:</label>
+            <textarea id="client-notes">f</textarea>
+
+            <label for="assigned-technician">Assigned Technician:</label>
+            <input type="text" id="assigned-technician" value="f">
+
+            <label for="estimated-amount">Estimated Amount:</label>
+            <input type="text" id="estimated-amount" value="None">
+
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" value="2024-09-18">
+
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="in-progress">In Progress</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+
+            <div class="form-buttons">
+                <button type="submit" class="save-btn">Save Changes</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='index.html';">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

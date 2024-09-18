@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Management Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hardik Traders - Client Management Dashboard</h1>
+    </header>
+
+    <section>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search by Client Name or ID...">
+            <button id="search-button">Search</button>
+        </div>
+        
+        <div class="new-job-container">
+            <button id="new-job-button">New Job Sheet</button>
+        </div>
+        
+        <table class="jobsheet-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Client ID</th>
+                    <th>Client Name</th>
+                    <th>Contact Info</th>
+                    <th>Received Date</th>
+                    <th>Inventory Received</th>
+                    <th>Reported Issues</th>
+                    <th>Client Notes</th>
+                    <th>Assigned Technician</th>
+                    <th>Estimated Amount</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>nand9953</td>
+                    <td>Nandini Goswami</td>
+                    <td>1234567890</td>
+                    <td>2024-09-05</td>
+                    <td>Mouse</td>
+                    <td>Issue with click</td>
+                    <td>None</td>
+                    <td>Technician A</td>
+                    <td>$100</td>
+                    <td>2024-09-18</td>
+                    <td>In Progress</td>
+                    <td>
+                        <button class="view-btn" data-id="1">View</button>
+                        <button class="edit-btn" data-id="1">Edit</button>
+                        <button class="delete-btn" data-id="1">Delete</button>
+                    </td>
+                </tr>
+                <!-- Add more rows for more jobs -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="scripts.js"></script>
+
+    <footer>
+        <p>&copy; 2024 Hardik Traders</p>
+    </footer>
+</body>
+</html>

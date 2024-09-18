@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Job Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>New Job Sheet</h1>
+    </header>
+
+    <section>
+        <form class="edit-form"> <!-- Ensure class is consistent with edit.html -->
+            <label for="client-name">Client Name:</label>
+            <input type="text" id="client-name" placeholder="Enter Client Name" required>
+
+            <label for="contact-info">Contact Info:</label>
+            <input type="text" id="contact-info" placeholder="Enter Contact Info" required>
+
+            <label for="received-date">Received Date:</label>
+            <input type="date" id="received-date" required>
+
+            <label for="inventory-received">Inventory Received:</label>
+            <input type="text" id="inventory-received" placeholder="Enter Inventory Received">
+
+            <label for="inventory-doc">Inventory Image/Document/Video:</label>
+            <input type="text" id="inventory-doc" placeholder="Enter Inventory Document">
+
+            <label for="reported-issues">Reported Issues:</label>
+            <textarea id="reported-issues" placeholder="Enter Reported Issues"></textarea>
+
+            <label for="client-notes">Client Notes:</label>
+            <textarea id="client-notes" placeholder="Enter Client Notes"></textarea>
+
+            <label for="assigned-technician">Assigned Technician:</label>
+            <input type="text" id="assigned-technician" placeholder="Enter Assigned Technician">
+
+            <label for="estimated-amount">Estimated Amount:</label>
+            <input type="text" id="estimated-amount" placeholder="Enter Estimated Amount">
+
+            <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" required>
+
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="in-progress">In Progress</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+
+            <div class="form-buttons">
+                <button type="submit" class="save-btn">Create Job Sheet</button>
+                <button type="button" class="cancel-btn" onclick="window.location.href='index.html';">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <script>
+        document.querySelector('.edit-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get values from the form
+            const clientName = document.getElementById('client-name').value;
+            const contactInfo = document.getElementById('contact-info').value;
+            const receivedDate = document.getElementById('received-date').value;
+            const inventoryReceived = document.getElementById('inventory-received').value;
+            const inventoryDoc = document.getElementById('inventory-doc').value;
+            const reportedIssues = document.getElementById('reported-issues').value;
+            const clientNotes = document.getElementById('client-notes').value;
+            const assignedTechnician = document.getElementById('assigned-technician').value;
+            const estimatedAmount = document.getElementById('estimated-amount').value;
+            const deadline = document.getElementById('deadline').value;
+            const status = document.getElementById('status').value;
+
+            // Create a new job sheet object (could be stored in localStorage or a database)
+            const newJobSheet = {
+                clientName,
+                contactInfo,
+                receivedDate,
+                inventoryReceived,
+                inventoryDoc,
+                reportedIssues,
+                clientNotes,
+                assignedTechnician,
+                estimatedAmount,
+                deadline,
+                status
+            };
+
+            // Assuming you're using localStorage for simplicity
+            let jobSheets = JSON.parse(localStorage.getItem('jobSheets')) || [];
+            jobSheets.push(newJobSheet);
+            localStorage.setItem('jobSheets', JSON.stringify(jobSheets));
+
+            // Show a confirmation message
+            alert('New Job Sheet Created!');
+
+            // Redirect to homepage (index.html)
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

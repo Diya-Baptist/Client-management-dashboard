@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Job Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Center the table on the page */
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .view-table {
+            width: 80%;
+            max-width: 800px;
+            border-collapse: collapse;
+            background-color: #f9f9f9;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .view-table th {
+            background-color: #003366;
+            color: white;
+            text-align: left;
+            padding: 15px;
+            width: 30%;
+        }
+
+        .view-table td {
+            padding: 15px;
+            text-align: left;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Print button container */
+        .view-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        /* Print button styling */
+        .print-btn {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .print-btn:hover {
+            background-color: #00539C;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>View Job Sheet</h1>
+    </header>
+
+    <section>
+        <div>
+            <table class="view-table">
+                <tr>
+                    <th>Client Name:</th>
+                    <td id="client-name"></td>
+                </tr>
+                <tr>
+                    <th>Contact Info:</th>
+                    <td id="contact-info"></td>
+                </tr>
+                <tr>
+                    <th>Received Date:</th>
+                    <td id="received-date"></td>
+                </tr>
+                <tr>
+                    <th>Inventory Received:</th>
+                    <td id="inventory-received"></td>
+                </tr>
+                <tr>
+                    <th>Inventory Image/Document/Video:</th>
+                    <td id="inventory-doc"></td>
+                </tr>
+                <tr>
+                    <th>Reported Issues:</th>
+                    <td id="reported-issues"></td>
+                </tr>
+                <tr>
+                    <th>Client Notes:</th>
+                    <td id="client-notes"></td>
+                </tr>
+                <tr>
+                    <th>Assigned Technician:</th>
+                    <td id="assigned-technician"></td>
+                </tr>
+                <tr>
+                    <th>Estimated Amount:</th>
+                    <td id="estimated-amount"></td>
+                </tr>
+                <tr>
+                    <th>Deadline:</th>
+                    <td id="deadline"></td>
+                </tr>
+                <tr>
+                    <th>Status:</th>
+                    <td id="status"></td>
+                </tr>
+            </table>
+
+            <div class="view-container">
+                <button class="print-btn" onclick="window.print()">Print</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Retrieve job data from localStorage
+        const job = JSON.parse(localStorage.getItem('viewJob'));
+
+        if (job) {
+            // Populate the table with job data
+            document.getElementById('client-name').textContent = job.clientName;
+            document.getElementById('contact-info').textContent = job.contactInfo;
+            document.getElementById('received-date').textContent = job.receivedDate;
+            document.getElementById('inventory-received').textContent = job.inventoryReceived;
+            document.getElementById('inventory-doc').textContent = job.inventoryDoc || 'None';
+            document.getElementById('reported-issues').textContent = job.reportedIssues;
+            document.getElementById('client-notes').textContent = job.clientNotes || 'None';
+            document.getElementById('assigned-technician').textContent = job.assignedTechnician;
+            document.getElementById('estimated-amount').textContent = job.estimatedAmount || 'None';
+            document.getElementById('deadline').textContent = job.deadline;
+            document.getElementById('status').textContent = job.status;
+        } else {
+            alert('No job data found.');
+        }
+    </script>
+</body>
+</html>
